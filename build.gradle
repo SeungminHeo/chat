@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'com.network'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group:'net.sourceforge.argparse4j', name: 'argparse4j', version: '0.8.1'
+}
+
+task runTopicManager(type: JavaExec) {
+    classpath sourceSets.main.runtimeClasspath
+    main = "Server"
+}
